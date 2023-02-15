@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost&display=swap');
+.logo_text {
+    font-family: 'Bebas Neue', cursive;
+}
+nav a,
+.title,
+.label_text,
+.form_text,
+.error,
+.welcome_block h1,
+.welcome_block span,
+.welcome_block a,
+.content h3,
+.photo a,
+.books,
+.edit_block h1,
+.edit_block h3,
+.edit label{
+    font-family: 'Jost', sans-serif;
+}
