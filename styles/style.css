@@ -19,6 +19,7 @@ nav a:not(:last-child){
 header{
     box-shadow: 0px -10px 30px rgba(174, 174, 192, 0.75);
     width: 100%;
+    background: #fff;
 }
 .container{
     width: 1200px;
@@ -106,11 +107,13 @@ iframe{
     line-height: 50px;
     text-align: center;
 }
-.login{
+.login,
+.book_block{
     width: max-content;
     margin: 0 auto;
 }
-input{
+input,
+textarea{
     display: block;
     width: 280px;
     font-size: 18px;
@@ -135,6 +138,7 @@ input:not(:last-child){
     font-style: normal;
     margin-bottom: 10px;
     display: block;
+    text-align: center;
 }
 .input_btn{
     color: #ff6700;
@@ -171,11 +175,12 @@ input:not(:last-child){
     font-size: 34px;
     line-height: normal;
     font-style: normal;
+    color: #fff;
 }
 .welcome_block span{
     display: block;
     margin: 10px 0 25px;
-    color: #2b2b2b;
+    color: #d2d2d2;
     font-size: 19px;
 }
 .welcome_block a{
@@ -212,7 +217,8 @@ input:not(:last-child){
     text-transform: uppercase;
 }
 .books{
-    border-top: 1px solid black;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
     width: 100%;
     display: block;
     margin-top: 50px;
@@ -220,9 +226,13 @@ input:not(:last-child){
     font-size: 18px;
     text-align: center;
 }
+.books span{
+    display: block;
+    width: 100%;
+}
 .btn_exit{
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 15px;
 }
 .edit_block{
     padding: 25px 150px;
@@ -238,4 +248,16 @@ input:not(:last-child){
 .edit label{
     display: block;
     margin: 5px 0;
+}
+.bg{
+    position: absolute;
+    z-index: -5;
+    width: 100%;
+    height: 100vh;
+}
+.add_book{
+    padding: 5px 10px;
+    height: min-content;
+    width: max-content;
+    display: flex;
 }

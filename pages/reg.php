@@ -7,13 +7,7 @@ session_start()
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/style.css">
-    <?php
-        if($_SESSION['mc'] === true){
-            echo '<link rel="stylesheet" href="../styles/mc.css">';
-        }else{
-            echo '<link rel="stylesheet" href="../styles/fonts.css">';
-        }
-    ?>
+    <link rel="stylesheet" href="../styles/fonts.css">
     <title>Регистрация</title>
 </head>
 <body>

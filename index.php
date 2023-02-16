@@ -8,22 +8,16 @@ session_start()
     <meta charset="UTF-8">
     <title>Library Online</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <?php
-        if($_SESSION['mc'] === true){
-            echo '<link rel="stylesheet" href="../styles/mc.css">';
-        }else{
-            echo '<link rel="stylesheet" href="../styles/fonts.css">';
-        }
-    ?>
+    <link rel="stylesheet" href="../styles/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <img src="./images/background.jpg" alt="">
+    <img class="bg" src="./images/background.jpg" alt="">
     <header>
         <div class="container">
             <a href="#" class="logo head"><span class="logo_text">Library Online</span></a>
             <nav>
-                <a class="head btn" href="#">Home</a>
+                <a class="head btn" href="./index.php">Home</a>
                 <a class="head btn" href="#">Books</a>
                 <a class="head btn" href="#">Authors</a>
             </nav>
