@@ -5,7 +5,8 @@
     $check_books = mysqli_query($link, "select * from `books` order by book_name");
     $books = mysqli_fetch_all($check_books,MYSQLI_ASSOC);
 
-    require '../php/search_modul.php';
+    $authors = mysqli_query($link, 'select * from `authors`');
+    $authors = mysqli_fetch_all($authors, MYSQLI_ASSOC);
 
 ?>
 

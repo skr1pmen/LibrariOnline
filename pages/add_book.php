@@ -7,7 +7,8 @@
     require '../php/connect.php';
     $link = get_connect();
 
-    require '../php/search_modul.php';
+    $authors = mysqli_query($link, 'select * from `authors`');
+    $authors = mysqli_fetch_all($authors, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>

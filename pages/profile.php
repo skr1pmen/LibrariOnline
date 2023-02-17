@@ -1,18 +1,20 @@
 <?php
     session_start();
-    require '../php/connect.php';
-    $link = get_connect();
     if(empty($_SESSION['user'])){
         echo '<h1 style="font-family: Jost, sans-serif; width: max-content; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">Ты кто и откуда?</h1>';
         exit();
     }
+    require '../php/connect.php';
+    $link = get_connect();
+
     $check_books = mysqli_query($link, "select * from `books` where user_add = '{$_SESSION['user']['id']}' order by data_add desc");
     $books = mysqli_fetch_all($check_books,MYSQLI_ASSOC);
 
     $rent_book = mysqli_query($link, "select * from `rental` where user_id = '{$_SESSION['user']['id']}' order by date_start");
     $rent = mysqli_fetch_all($rent_book, MYSQLI_ASSOC);
 
-    require '../php/search_modul.php';
+    $authors = mysqli_query($link, 'select * from `authors`');
+    $authors = mysqli_fetch_all($authors, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +55,7 @@
                                         <img style="width: 150px; height: 225px;" src="data:image/jpeg;base64, <?php echo base64_encode($user_book['cover']) ?>" alt="">
                                         <h3 class="book_name"><?php echo $user_book['book_name']?></h3>
                                         <span class="date" style="margin-bottom: 10px"><?php echo date('Y-m-d')-$id['date_start']?></span>
-                                        <a href="#" style="padding: 5px 25px" class="btn">Подробнее</a>
+                                        <a href="./book_view.php?id=<?php echo $user_book['id'] ?>" style="padding: 5px 25px" class="btn">Подробнее</a>
                                     </div>
                                     <?php
                                 }

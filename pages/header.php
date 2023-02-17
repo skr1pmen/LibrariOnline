@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <header>
     <div class="container">
         <a href="../index.php" class="logo head"><span class="logo_text">Library Online</span></a>

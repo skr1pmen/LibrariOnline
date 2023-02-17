@@ -4,7 +4,11 @@
         echo '<h1 style="font-family: Jost, sans-serif; width: max-content; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">Ты кто и откуда?</h1>';
         exit();
     }
-    require '../php/search_modul.php';
+    require '../php/connect.php';
+    $link = get_connect();
+
+    $authors = mysqli_query($link, 'select * from `authors`');
+    $authors = mysqli_fetch_all($authors, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
