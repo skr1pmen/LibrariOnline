@@ -12,8 +12,6 @@ a{
 }
 nav a{
     font-size: 18px;
-}
-nav a:not(:last-child){
     margin-right: 25px;
 }
 header{
@@ -218,7 +216,6 @@ input:not(:last-child){
 }
 .books{
     border-top: 1px solid rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
     width: 100%;
     display: block;
     margin-top: 50px;
@@ -273,4 +270,30 @@ input:not(:last-child){
     border-radius: 8px;
     box-shadow: 2px 2px 4px rgba(13, 39, 80, 0.16),
     -2px -2px 4px #fff;
+}
+.authors{
+    text-align: center;
+}
+.search{
+    display: inline-block;
+    margin-top: calc(75px / 2 - 23px / 2);
+    height: max-content;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(13, 39, 80, 0.16),
+    -2px -2px 4px #fff;
+}
+.search input{
+    width: max-content;
+    display: inline-block;
+    font-size: 19px;
+    box-shadow: none;
+    margin: 0;
+    text-align: left;
+    padding: 0 5px;
+}
+.search input[type="submit"]{
+    padding: 0 5px;
+    background: #ff6700;
+    color: #fff;
+    cursor: pointer;
 }

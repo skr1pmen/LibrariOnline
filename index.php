@@ -1,5 +1,10 @@
 <?php
-session_start()
+    session_start();
+    require './php/connect.php';
+    $link = get_connect();
+
+    $authors = mysqli_query($link, 'select * from `authors`');
+    $authors = mysqli_fetch_all($authors, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +24,17 @@ session_start()
             <nav>
                 <a class="head btn" href="./index.php">Home</a>
                 <a class="head btn" href="./pages/book.php">Books</a>
-                <a class="head btn" href="#">Authors</a>
+                <a class="head btn" href="./pages/authors.php">Authors</a>
             </nav>
+            <form action="php/search_modul.php" method="post" class="search">
+                <input list="search" type="search" placeholder="Поисковая строка">
+                <input type="submit" value="Поиск">
+            </form>
+            <datalist id="search">
+                <?php foreach ($authors as $author) {
+                    echo "<option value='{$author['fio']}'/>";
+                }?>
+            </datalist>
             <?php
                 if(empty($_SESSION['user'])){
                     echo '<a class="head last_btn" href="./pages/login.php"><i class="fas fa-sign-in-alt"></i></a>';

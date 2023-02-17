@@ -2,9 +2,11 @@
     session_start();
     require '../php/connect.php';
     $link = get_connect();
-    $check_books = mysqli_query($link, "select * from `books` where user_add = '{$_SESSION['user']['id']}' order by book_name");
+    $check_books = mysqli_query($link, "select * from `books` order by book_name");
     $books = mysqli_fetch_all($check_books,MYSQLI_ASSOC);
-    get_close($link);
+
+    require '../php/search_modul.php';
+
 ?>
 
 <!doctype html>
@@ -13,6 +15,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/fonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Список книг | Library Online</title>
 </head>
 <body>
@@ -33,13 +36,12 @@
                             <a href="#" style="padding: 5px 25px" class="btn">Подробнее</a>
                         </div>
                         <?php
-
                     }
                 }
-
                 ?>
             </div>
         </div>
     </div>
 </body>
 </html>
+<?php get_close($link);?>

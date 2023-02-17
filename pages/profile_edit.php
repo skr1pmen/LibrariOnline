@@ -4,6 +4,7 @@
         echo '<h1 style="font-family: Jost, sans-serif; width: max-content; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">Ты кто и откуда?</h1>';
         exit();
     }
+    require '../php/search_modul.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,3 +42,4 @@
     </div>
 </body>
 </html>
+<?php get_close($link);?>
