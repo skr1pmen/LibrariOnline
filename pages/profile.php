@@ -1,9 +1,14 @@
 <?php
     session_start();
+    require '../php/connect.php';
+    $link = get_connect();
     if(empty($_SESSION['user'])){
         echo '<h1 style="font-family: Jost, sans-serif; width: max-content; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">Ты кто и откуда?</h1>';
         exit();
     }
+    $check_books = mysqli_query($link, "select * from `books` where user_add = '{$_SESSION['user']['id']}' order by data_add desc ");
+    $books = mysqli_fetch_all($check_books,MYSQLI_ASSOC);
+    get_close($link);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +35,25 @@
             <h3 class="fio"><?= $_SESSION['user']['name'] ?> <?= $_SESSION['user']['surname'] ?> <?= $_SESSION['user']['patronymic'] ?></h3>
             <div class="books">
                 <a class="btn add_book" href="./add_book.php">Add Book</a>
-                <span>No books added</span>
+                <div class="add_books">
+                    <?php
+                        if(mysqli_num_rows($check_books) === 0){
+                            echo "<span>No books added</span>";
+                        }else{
+                            foreach ($books as $book){?>
+                                <div class="book">
+                                    <img style="width: 150px; height: 225px;" src="data:image/jpeg;base64, <?php echo base64_encode($book['cover']) ?>" alt="">
+                                    <h3 class="book_name"><?php echo $book['book_name']?></h3>
+                                    <span class="date" style="margin-bottom: 10px"><?php echo $book['data_add']?></span>
+                                    <a href="#" style="padding: 5px 25px" class="btn">Подробнее</a>
+                                </div>
+                        <?php
+
+                            }
+                        }
+
+                    ?>
+                </div>
             </div>
         </div>
     </div>

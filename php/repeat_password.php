@@ -19,3 +19,4 @@
         $result = mysqli_query($link, "update `users` set password = '{$new_password}' where id = '{$id}'");
         $_SESSION['message'] = "Пароль успешно изменён!";
     }
+    get_close($link);

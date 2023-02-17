@@ -18,7 +18,7 @@ session_start()
             <a href="#" class="logo head"><span class="logo_text">Library Online</span></a>
             <nav>
                 <a class="head btn" href="./index.php">Home</a>
-                <a class="head btn" href="#">Books</a>
+                <a class="head btn" href="./pages/book.php">Books</a>
                 <a class="head btn" href="#">Authors</a>
             </nav>
             <?php

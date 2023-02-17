@@ -261,3 +261,16 @@ input:not(:last-child){
     width: max-content;
     display: flex;
 }
+.add_books{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.book{
+    width: max-content;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(13, 39, 80, 0.16),
+    -2px -2px 4px #fff;
+}

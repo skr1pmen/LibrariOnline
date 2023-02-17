@@ -31,12 +31,14 @@
         if(mysqli_num_rows($check_article) === 0){
             $add_book = mysqli_query($link, "insert into `books` (book_name, author_id, article, description, data_add, cover, user_add)
 values ('{$book_name}', '{$author_id['id']}', '{$article}', '{$desc}', NOW(), '{$cover}', '{$id}')");
+            header('Location: ../pages/book.php');
         }else{
             $_SESSION['message'] = 'Этот артикуль уже используется!';
         }
     }else{
         $_SESSION['message'] = 'Книга с таким названием уже существует!';
     }
+    get_close($link);
 
 
 
