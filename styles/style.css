@@ -255,13 +255,15 @@ input:not(:last-child){
 .add_book{
     padding: 5px 10px;
     height: min-content;
-    width: max-content;
+    width: 450px;
     display: flex;
+    flex-wrap: wrap;
 }
 .add_books{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 10px;
 }
 .book{
@@ -308,4 +310,36 @@ input:not(:last-child){
     width: 270px;
     height: 400px;
     background: #000;
+}
+.book_info span{
+    width: 100%;
+    display: block;
+}
+.btn_view{
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background: none;
+    padding: 10px 15px;
+    box-shadow: 2px 2px 4px rgba(13, 39, 80, 0.16),
+    -2px -2px 4px #fff;
+    border-radius: 8px;
+    color: #ff6700;
+    cursor: pointer;
+}
+.btn_view:hover{
+    color: #fff;
+    background: #ff6700;
+    box-shadow: 4px 4px 4px rgba(13, 39, 80, 0.16),
+    -4px -4px 4px #fff;
+}
+.btn_view:active{
+    box-shadow: 2px 2px 4px rgba(13, 39, 80, 0.16) inset,
+    -2px -2px 4px #fff inset;
+ }
+.delete{
+    color: red;
+}
+.delete:hover{
+    background: red;
 }

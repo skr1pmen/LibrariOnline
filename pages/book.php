@@ -34,7 +34,7 @@
                             <img style="width: 150px; height: 225px;" src="data:image/jpeg;base64, <?php echo base64_encode($book['cover']) ?>" alt="">
                             <h3 class="book_name"><?php echo $book['book_name']?></h3>
                             <span class="date" style="margin-bottom: 10px"><?php echo $book['data_add']?></span>
-                            <a href="#" style="padding: 5px 25px" class="btn">Подробнее</a>
+                            <a href="./book_view.php?id=<?php echo $book['id'] ?>" style="padding: 5px 25px" class="btn">Подробнее</a>
                         </div>
                         <?php
                     }

@@ -16,6 +16,7 @@ nav a,
 .edit_block h1,
 .edit_block h3,
 .edit label,
-.view{
+.view,
+.btn_view{
     font-family: 'Jost', sans-serif;
 }

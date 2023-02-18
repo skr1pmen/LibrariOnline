@@ -26,7 +26,7 @@
                 <a class="head btn" href="./pages/book.php">Books</a>
                 <a class="head btn" href="./pages/authors.php">Authors</a>
             </nav>
-            <form action="php/search_modul.php" method="post" class="search">
+            <form action="" method="post" class="search">
                 <input list="search" type="search" placeholder="Поисковая строка">
                 <input type="submit" value="Поиск">
             </form>
